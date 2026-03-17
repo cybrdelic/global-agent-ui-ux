@@ -1,0 +1,5 @@
+{
+  "name": "GraphOS - Developer Control Plane",
+  "description": "A Dieter Rams-inspired hardware interface for a unified operational graph, managing projects, agents, and machine state.",
+  "requestFramePermissions": []
+}

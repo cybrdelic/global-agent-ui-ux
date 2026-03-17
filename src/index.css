@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #d4d2cd; /* Desk surface */
+  background-image: radial-gradient(circle at 50% 0%, #e2e0db 0%, #c4c2bd 100%);
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hardware Device Body */
+.hw-body {
+  background-color: #e8e6e1;
+  box-shadow: 
+    0 25px 50px -12px rgba(0,0,0,0.25),
+    inset 0 2px 4px rgba(255,255,255,0.8),
+    inset 0 -4px 8px rgba(0,0,0,0.05);
+  border: 1px solid #d1cfc8;
+}
+
+/* LCD Screen */
+.lcd-screen {
+  background-color: #9ea79c;
+  box-shadow: 
+    inset 0 4px 12px rgba(0,0,0,0.15), 
+    inset 0 1px 2px rgba(0,0,0,0.2), 
+    0 1px 0 rgba(255,255,255,0.5);
+}
+
+.lcd-text {
+  font-family: var(--font-mono);
+  color: #1a2421;
+  text-shadow: 
+    1px 1px 0px rgba(255,255,255,0.2),
+    -1px -1px 0px rgba(0,0,0,0.1);
+}
+
+/* Hardware Buttons */
+.hw-btn {
+  transition: all 0.05s ease;
+  position: relative;
+}
+
+.hw-btn-primary {
+  background: linear-gradient(180deg, #ff5e1a 0%, #e64300 100%);
+  box-shadow: 
+    0 6px 0 #b33400,
+    0 8px 15px rgba(230, 67, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.hw-btn-primary:active {
+  transform: translateY(6px);
+  box-shadow: 
+    0 0px 0 #b33400,
+    0 2px 4px rgba(230, 67, 0, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hw-btn-secondary {
+  background: linear-gradient(180deg, #e8e6e1 0%, #d1cfc8 100%);
+  box-shadow: 
+    0 6px 0 #a3a19a,
+    0 8px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.05);
+  color: #4a4a4a;
+}
+
+.hw-btn-secondary:active {
+  transform: translateY(6px);
+  box-shadow: 
+    0 0px 0 #a3a19a,
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Physical Toggle Switch */
+.hw-toggle {
+  background-color: #d1cfc8;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.hw-toggle-knob {
+  background: linear-gradient(180deg, #fdfbf7 0%, #e8e6e1 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.8);
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.hw-toggle.active .hw-toggle-knob {
+  background: linear-gradient(180deg, #ff5e1a 0%, #e64300 100%);
+  box-shadow: 0 2px 4px rgba(230,67,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* Hardware Input (LCD Style) */
+.hw-input {
+  background-color: #9ea79c;
+  box-shadow: 
+    inset 0 4px 12px rgba(0,0,0,0.15), 
+    inset 0 1px 2px rgba(0,0,0,0.2), 
+    0 1px 0 rgba(255,255,255,0.5);
+  color: #1a2421;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+}
+
+.hw-input::placeholder {
+  color: rgba(26, 36, 33, 0.5);
+}
+
+.hw-input:focus {
+  outline: none;
+  box-shadow: 
+    inset 0 4px 12px rgba(0,0,0,0.15), 
+    inset 0 1px 2px rgba(0,0,0,0.2), 
+    0 0 0 2px #ff5e1a,
+    0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* Custom Hardware Scrollbar */
+.hw-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.hw-scrollbar::-webkit-scrollbar-track {
+  background: #d1cfc8;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  margin: 4px 0;
+}
+
+.hw-scrollbar::-webkit-scrollbar-thumb {
+  background: #a3a19a;
+  border-radius: 5px;
+  border: 2px solid #d1cfc8;
+}
+
+.hw-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #8a8882;
+}
+
+/* Dark Scrollbar for Ledger */
+.hw-scrollbar-dark::-webkit-scrollbar {
+  width: 10px;
+}
+
+.hw-scrollbar-dark::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  margin: 4px 0;
+}
+
+.hw-scrollbar-dark::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 5px;
+  border: 2px solid #1a1a1a;
+}
+
+.hw-scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}
+
+/* Speaker Grill */
+.speaker-grill-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  box-shadow: 
+    inset 0 1px 1px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.8);
+  opacity: 0.3;
+}
